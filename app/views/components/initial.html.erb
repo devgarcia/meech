@@ -2,13 +2,13 @@
 
 <div class="cardInitial">
   <div class="headerInitial">
-    <h1 class="text-center mb-4 initialTitle">Electonic Components</h1>
+    <h1 class="text-center mb-4 initialTitle">Electronic Components</h1>
   </div>
-  <div class="card-body">
+  <div class="card-body-initial">
     <h5 class="card-title text-center mt-3">Check if there are enough components for your project otherwise find where to buy them without wasting time </h5>
     <%= form_tag components_path, method: :get do %>
   <p class="text-center mt-5">
-       <%= text_field_tag :query, params[:query], placeholder: "Click Search to see All Components at once", size: 35 %>
+       <%= text_field_tag :query, params[:query], placeholder: "Click Search to see All Components", size: 35 %>
     <%= submit_tag "Search", name: nil, :class => ' btn btn-submitbutton '%> 
   </p>
 <% end %>
