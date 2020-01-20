@@ -1,16 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Components</h1>
+<h1 class="searchTitle">
+  <% if params[:query].present?  %>
+    <%= "Results"  %>    <%#params[:query].pluralize.capitalize %>
+  <% else %>   
+    <%= "All Components" %>   
+  <% end %>
+</h1>
 
+<br>
+<br>
+
+<%= link_to 'New Component', new_component_path, class: "newComponent" %>
+<%= link_to 'Back to Search', initial_path, class: "backSearch" %>
+
+<br>
+<br>
+<div class="table-responsive">
 <div class="row card indextable">
   <div class="container-fluid">
     <table class="table table-striped">
       <thead>
         <tr>
+          <th>Category</th>
           <th >Name</th>
           <th>Value</th>
           <th>Size</th>
-          <th>Termination mounting style</th>
+          <th>Termination / Mounting style</th>
           <th>Quantity</th>
           <th>Supplier</th>
           <th>Order code</th>
@@ -21,6 +37,7 @@
       <tbody>
         <% @components.each do |component| %>
           <tr>
+            <td><%= component.category %></td>
             <td><%= component.name %></td>
             <td><%= component.value %></td>
             <td><%= component.size %></td>
@@ -37,7 +54,11 @@
     </table>
   </div>
 </div>
+</div>
 
 <br>
 
-<%= link_to 'New Component', new_component_path %>
+<div class="foot"> 
+<%= link_to 'New Component', new_component_path, class: "newComponent"  %>
+<%= link_to 'Back to Search', initial_path, class: "backSearch" %>
+</div>

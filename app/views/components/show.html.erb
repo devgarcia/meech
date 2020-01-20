@@ -1,5 +1,18 @@
 <p id="notice"><%= notice %></p>
 
+<div class="card">
+  <h5 class="card-header showTitle"><p>
+  Category:
+  <%= @component.category %>
+</h5>
+  <div class="card-body">
+   
+
+<%#<p>
+  <strong>Category:</strong>
+  <%= @component.category
+</p> %>
+
 <p>
   <strong>Name:</strong>
   <%= @component.name %>
@@ -16,7 +29,7 @@
 </p>
 
 <p>
-  <strong>Termination mounting style:</strong>
+  <strong>Termination / Mounting style:</strong>
   <%= @component.termination_mounting_style %>
 </p>
 
@@ -35,5 +48,11 @@
   <%= @component.order_code %>
 </p>
 
-<%= link_to 'Edit', edit_component_path(@component) %> |
-<%= link_to 'Back', components_path %>
+<div class="mt-5 mb-3">
+  <%= link_to 'Edit', edit_component_path(@component), :class => "edit" %> |
+  <%= link_to 'Back', components_path, :class => "showBack" %>
+</div>
+
+</div>
+
+

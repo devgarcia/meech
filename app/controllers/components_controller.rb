@@ -3,13 +3,17 @@ class ComponentsController < ApplicationController
 
   # GET /components
   # GET /components.json
+  def initial
+  end
+
   def index
-    @components = Component.all
+    @components = Component.text_search(params[:query]) 
   end
 
   # GET /components/1
   # GET /components/1.json
   def show
+    @component = Component.find(params[:id])    
   end
 
   # GET /components/new
@@ -69,6 +73,6 @@ class ComponentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def component_params
-      params.require(:component).permit(:name, :value, :size, :termination_mounting_style, :quantity, :supplier, :order_code)
+      params.require(:component).permit(:category, :name, :value, :size, :termination_mounting_style, :quantity, :supplier, :order_code, :add_substract)
     end
 end

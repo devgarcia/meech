@@ -11,42 +11,80 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
 
-  <div class="field">
-    <%= form.label :value %>
-    <%= form.text_field :value %>
+  <div class="cardInitial">
+  <div class="headerInitial">
+    <% if @component.name.present? %>
+    <h1 class="text-center mb-4 initialTitle">Editing <%= @component.name %></h1>
+    <% else %>
+    <h1 class="text-center mb-4 initialTitle">Creating Component</h1>
+    <% end %>
   </div>
+  <div class="card-body">
 
-  <div class="field">
-    <%= form.label :size %>
-    <%= form.text_field :size %>
-  </div>
 
-  <div class="field">
-    <%= form.label :termination_mounting_style %>
-    <%= form.text_field :termination_mounting_style %>
-  </div>
+  <div class="form-group">     
+    <b><%= form.label :category, :class => "col-sm-4 col-md-3 comp-name"%></b>
+    <%= form.text_field :category, :class => "col-sm-6 company-name" %>
+  </div> 
 
-  <div class="field">
-    <%= form.label :quantity %>
-    <%= form.number_field :quantity %>
-  </div>
+  <div class="form-group">     
+    <b><%= form.label :name, :class => "col-sm-4 col-md-3 comp-name"%></b>
+    <%= form.text_field :name, :class => "col-sm-6 company-name" %>
+  </div> 
 
-  <div class="field">
-    <%= form.label :supplier %>
-    <%= form.text_field :supplier %>
-  </div>
+  <div class="form-group">     
+    <b><%= form.label :value, :class => "col-sm-4 col-md-3 comp-name"%></b>
+    <%= form.text_field :value, :class => "col-sm-6 company-name" %>
+  </div> 
 
-  <div class="field">
-    <%= form.label :order_code %>
-    <%= form.text_field :order_code %>
-  </div>
+  <div class="form-group">     
+    <b><%= form.label :size, :class => "col-sm-4 col-md-3 comp-name"%></b>
+    <%= form.text_field :size, :class => "col-sm-6 company-name" %>
+  </div> 
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">     
+    <b><%= form.label :termination_mounting_style, :class => "col-sm-4 col-md-3 comp-name"%></b>
+    <%= form.text_field :termination_mounting_style, :class => "col-sm-6 company-name" %>
+  </div> 
+
+  <div class="form-group">     
+    <b><%= form.label :quantity, :class => "col-sm-4 col-md-3 comp-name"%></b>
+    <%= form.text_field :quantity, :class => "col-sm-6 company-name" %>
+  </div> 
+
+  <div class="form-group add_subs">     
+    <b><%= form.label :name, 'Add or Substract Quantity', :class => "col-sm-4 col-md-3 comp-name"%></b>
+   
+    <%= form.number_field :add_substract, :class => "col-sm-6 company-name"%>
+    <%#small id="passwordHelpBlock" class="form-text text-muted">
+ Add the minus (-) sign when substracting (i.e. -4)
+</small> %>
+
+<div class="feedback col-sm-6 "><small> <b>Note: </b> Add the minus (-) sign when substracting (i.e. -4)</small></div>
+  </div> 
+  <br>
+
+  <div class="form-group">     
+    <b><%= form.label :supplier, :class => "col-sm-4 col-md-3 comp-name"%></b>
+    <%= form.text_field :supplier, :class => "col-sm-6 company-name" %>
+  </div> 
+
+  <div class="form-group">     
+    <b><%= form.label :order_code, :class => "col-sm-4 col-md-3 comp-name"%></b>
+    <%= form.text_field :order_code, :class => "col-sm-6 company-name" %>
+  </div> 
+
+
+  <div class="actions submitbutton text-center">
+    <%= form.submit :class => ' btn btn-submitbutton ' %>
   </div>
 <% end %>
+
+<div class="text-center mt-3">  
+  <%= link_to 'Show', @component, :class => "show" %> |
+  <%= link_to 'Back', components_path , :class => "showBack" %>
+</div>
+
+  </div>
+</div>
