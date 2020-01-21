@@ -1,7 +1,7 @@
 class Component < ApplicationRecord
 
   include PgSearch::Model
-  validates_presence_of :name
+  #validates_presence_of :name
 
   after_initialize :init
   before_save :add_or_substract_quantity
