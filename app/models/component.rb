@@ -3,6 +3,7 @@ class Component < ApplicationRecord
   include PgSearch::Model
   validates_presence_of :name
 
+  after_initialize :init
   before_save :add_or_substract_quantity
   
   pg_search_scope :search, against: [:category, :name, :value, :size, :termination_mounting_style, :supplier, :order_code]
@@ -17,6 +18,17 @@ class Component < ApplicationRecord
     end
   end
  
+
+  def init
+    self.quantity  ||= 0
+    #self.supplier.capitalize ||= ""
+  end
+
+  #def set_default_quantity
+  #  self.quantity = 0
+  #end
+
+
 private
 def add_or_substract_quantity()
   self.quantity = self.quantity + self.add_substract

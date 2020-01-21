@@ -19,6 +19,8 @@
 .searchTitle {
 margin-top: 8%;
 }
+
+// Striped table colors
 .table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {    background-color: #cef8fd !important;
 }
 
@@ -41,15 +43,18 @@ margin-top: 8%;
 .initialTitle{
   padding-top: 5%;
   padding-bottom: 5%;
+
 }
 
 .card.cardShow {
     margin-top: 9%;
 }
 
-.showTitle{
-  padding-top: 6% !important;
-  padding-top: 6% !important;
+.showTitle {
+  padding-top: 5% !important;
+  padding-bottom: 3% !important;
+  background-color: #0cad5a !important;
+  color: white;
 }
 
 .add_subs {

@@ -11,6 +11,8 @@
        <%= text_field_tag :query, params[:query], placeholder: "Click Search to see All Components", size: 35 %>
     <%= submit_tag "Search", name: nil, :class => ' btn btn-submitbutton '%> 
   </p>
+
+  <h5  class="text-center mt-5"> You can also add a new component to the Database by clicking on this link <%= link_to 'New Component', new_component_path, class: "newComponent" %></h5>
 <% end %>
   </div>
 </div>
